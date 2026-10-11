@@ -1,0 +1,150 @@
+/* 1. Global Reset: Removes all browser hidden spacing defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Base Document Rules */
+html, body {
+    width: 100%;
+    background-color: #f7f4e3;
+}
+
+/* 3. Main Header Container touching the absolute edges */
+.gallery-header {
+    background-color: #f7f4e3;
+    width: 100%;
+    border-top: 16px solid #2d5a27; /* Solid green banner line */
+    padding: 15px 40px; /* Space inside header sides and top/bottom */
+}
+
+
+/* 1. Force the inner container to fill the entire screen width */
+.header-container {
+    display: block;        /* Changes layout block model to standard flow */
+    position: relative;
+    width: 100%;           /* Spans across 100% of the screen */
+    max-width: 100% !important; /* Overrides any hidden width limits */
+    padding: 0;
+    margin: 0;
+}
+
+/* 2. Absolute positioning to pin the logo directly into the left corner */
+.logo-image {
+    height: 40px; 
+    width: auto;  
+    position: absolute;    /* Removes it from flow so it ignores the text completely */
+    
+    /* CORNER FIXES: */
+    left: 20px !important; /* Pushes it directly into the far left screen corner */
+    top: 50%;              /* Aligns it perfectly inline with the text height */
+    transform: translateY(-50%); 
+}
+
+/* 3. Keep the gallery title perfectly centered on the page */
+.gallery-title {
+    color: #000000;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+/* 4. Main Body Content Section: Expanded Full Screen Corner-to-Corner Layout */
+.main-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 40px 0; /* Minimal top padding (10px) to shift the banner upward closer to text */
+}
+
+/* Banner Frame Container - EXPANDS FULLY TO TOUCH CORNERS WITHOUT GAPS */
+.poster-container {
+    width: 100%; 
+    max-width: 100%; 
+    border-left: none; /* Removes left frame line so it seamlessly fills screen edges */
+    border-right: none; /* Removes right frame line so it seamlessly fills screen edges */
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Big Image responsive scaling behavior inside the expanded box */
+.main-poster {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; 
+}
+
+
+
+
+/* Enables smooth sliding animation across the entire document layout */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Offset body padding to balance the space taken up by the fixed navigation */
+body {
+    margin: 0;
+    padding-top: 60px; 
+}
+
+/* Top Sticky Floating Panel Container */
+.sinag-navbar {
+    background-color: #0c6a30; /* FEU Green */
+    border-bottom: 10px solid #efb810; /* Accent Gold */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* Higher layer priority ensures it floats above graphics */
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+/* Nav links styling matching your web app typography themes */
+.nav-link {
+    display: block;
+    padding: 18px 25px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Dynamic Hover Action Indicator */
+.nav-link:hover {
+    background-color: #084920; 
+    color: #efb810; 
+}
+
+/* Ensures sections have clear clearance offset so headers aren't buried beneath navbar */
+section {
+    scroll-margin-top: 70px;
+    padding: 40px 20px;
+}
