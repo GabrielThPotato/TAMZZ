@@ -1,0 +1,19 @@
+.vertical_line {
+    border-left: 2px solid #e0b219ee;
+    height: 100px;
+    display: inline-block;
+    margin: 0 15px;
+}
+.hero{
+     background: #0c6a30;
+    text-align: center;
+    padding: 20px 40px; 
+
+    /*text*/
+    font-family:'Times New Roman', Times, serif ;
+    display: flex;
+    justify-content: space-between;
+    color:#e0b219ee
+}
+
+
