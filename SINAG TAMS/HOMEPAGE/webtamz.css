@@ -25,16 +25,12 @@ body {
 .sinag-navbar {
     background-color: #064018; /* FEU Green */
     border-bottom: 6px solid #efb810;
-    /* Accent Gold */
-    
-    /* ADD/UPDATE THESE FIXED POSITIONING RULES */
-    position: fixed;   /* Force the nav container layout to lock to the viewport */
-    top: 0;            /* Lock flush against the absolute top edge */
-    left: 0;           /* Stretch completely to the left border edge */
-    width: 100%;       /* Force bar to run edge-to-edge full width */
-    z-index: 99999;      /* Max priority value layer keeps it floating over graphics and images */
-    padding-bottom: 5px;    /* Max priority value layer keeps it floating over graphics and images */
-    
+    position: fixed;   
+    top: 0;            
+    left: 0;           
+    width: 100%;       
+    z-index: 99999;      
+    padding-bottom: 5px;    
     font-family: times new roman, serif; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
@@ -167,7 +163,7 @@ section {
     padding: 35px 20px;       /* Increased padding slightly for balanced spacing */
     text-align: center;
     box-sizing: border-box;
-    margin-bottom: 30px;      /* Generates a clean gap above your search input box */
+    margin-bottom: 30px;      
 }
 
 /* Bold prominent section header title */
@@ -183,9 +179,9 @@ section {
 
 /* Smaller description info sentence block below */
 .discover-text-banner .banner-sub-text {
-    color: #fbf8eb;           /* Soft beige/off-white text matching page styles */
+    color: #fbf8eb;           
     font-family: 'Georgia', serif;
-    font-style: italic;       /* Keeps the classic editorial documentation look */
+    font-style: italic;       
     font-size: 1rem;
     margin: 0;
     opacity: 0.9;
@@ -325,3 +321,4 @@ section {
     font-size: 0.9rem;
     letter-spacing: 0.3px;
 }
+
