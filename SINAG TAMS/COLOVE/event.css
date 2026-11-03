@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: georgia, serif;
+    width: 100%;
+    background-color: #fdfae5;
+    overflow-x: hidden;
+}
+
+.sinag-navbar {
+    background-color: #064018; /* FEU Green */
+    border-bottom: 6px solid #efb810;
+    position: fixed;   
+    top: 0;            
+    left: 0;           
+    width: 100%;       
+    z-index: 99999;      
+    padding-bottom: 5px;    
+    font-family: times new roman, serif; 
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    display: block;
+    padding: 18px 25px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.partners-section{
+    padding:120px 20px 60px;
+    text-align:center;
+}
+
+.partners-section h2{
+    font-size:clamp(1.8rem,4vw,3rem);
+    font-weight:500;
+    color:#111;
+    margin:40px 0 20px;
+}
+
+.partners-section img{
+    width:100%;
+    max-width:500px;
+    height:auto;
+    display:block;
+    margin:0 auto 30px;
+}
+
+
+
+/* Isolated Footer Framework */
+.site-footer {
+    background: linear-gradient(135deg, #123d2b, #08291d);
+    color: #fff;
+    text-align: center;
+    padding: 35px 20px;
+    border-top: 5px solid #d6aa35;
+    margin-top: auto;  /* Anchors block cleanly to layout bottom */
+    width: 100%;        
+}
+
+.footer-content p {
+    margin: 6px 0;
+}
+
+.footer-content p:first-child {
+    color: #f1ca55;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+.footer-subtext {
+    color: #e5e5df;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+}
+/* Mobile */
+@media (max-width:768px){
+
+    .partners-grid{
+        grid-template-columns:1fr;
+        justify-items:center;
+    }
+
+    .partner-card{
+        width:100%;
+        max-width:320px;
+    }
+
+    .partner-logo{
+        width:160px;
+        height:160px;
+    }
+
+    .partner-card h3{
+        font-size:1.6rem;
+    }
+}
+
