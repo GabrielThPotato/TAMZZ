@@ -128,45 +128,112 @@ footer p{
     color:#777;
 }
 
-<<<<<<< Updated upstream
+
 /* Back to top button */
 #back-to-top{
-    position:fixed;
-    bottom:24px;
-    right:24px;
-    width:44px;
-    height:44px;
-    border:none;
-    border-radius:50%;
-    background:#0066cc;
-    color:white;
-    font-size:20px;
-    cursor:pointer;
-    box-shadow:0 2px 8px rgba(0,0,0,0.2);
-    opacity:0;
-    visibility:hidden;
-    transition:opacity 0.3s, visibility 0.3s, transform 0.2s, background 0.2s;
-    z-index:1000;
+    position: fixed;
+    bottom: 30px;
+
+    /* Center the button horizontally */
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* Make the button larger */
+    width: 70px;
+    height: 70px;
+
+    border: none;
+    border-radius: 50%;
+    background: #0066cc;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.2s, background 0.2s;
+    z-index: 1000;
 }
 
 #back-to-top.show{
-    opacity:1;
-    visibility:visible;
+    opacity: 1;
+    visibility: visible;
 }
 
 #back-to-top:hover{
-    background:#003d80;
-    transform:translateY(-3px);
+    background: #003d80;
+    transform: translateX(-50%) translateY(-6px);
 }
-=======
-
-@media screen and (max-width: 768px) {
-  body {
-    background-color: lightblue;
-  }
-  .sidebar {
-    display: none; 
-  }
+/* Dark and Light Mode Button */
+.theme-container {
+    text-align: center;
+    margin: 20px 0;
 }
 
->>>>>>> Stashed changes
+#theme-toggle {
+    background: #0066cc;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#theme-toggle:hover {
+    background: #003d80;
+    transform: scale(1.05);
+}
+
+/* DARK MODE */
+body.dark-mode {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark-mode .container {
+    background: #1e1e1e;
+}
+
+body.dark-mode header h1,
+body.dark-mode h2 {
+    color: #4da3ff;
+}
+
+body.dark-mode header p,
+body.dark-mode .member p,
+body.dark-mode .post p,
+body.dark-mode footer p {
+    color: #ccc;
+}
+
+body.dark-mode nav a {
+    color: #4da3ff;
+}
+
+body.dark-mode nav a:hover {
+    color: #80bdff;
+}
+
+body.dark-mode .member,
+body.dark-mode .contact-box,
+body.dark-mode .members {
+    background: #292929;
+}
+
+body.dark-mode .post h3 {
+    color: #f1f1f1;
+}
+
+body.dark-mode .members span {
+    color: #ccc;
+}
+
+body.dark-mode h2 {
+    border-bottom-color: #4da3ff;
+}
