@@ -127,3 +127,33 @@ footer{
 footer p{
     color:#777;
 }
+
+/* Back to top button */
+#back-to-top{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    width:44px;
+    height:44px;
+    border:none;
+    border-radius:50%;
+    background:#0066cc;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 0.3s, visibility 0.3s, transform 0.2s, background 0.2s;
+    z-index:1000;
+}
+
+#back-to-top.show{
+    opacity:1;
+    visibility:visible;
+}
+
+#back-to-top:hover{
+    background:#003d80;
+    transform:translateY(-3px);
+}
