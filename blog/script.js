@@ -33,3 +33,49 @@ themeToggle.addEventListener("click", () => {
     }
 
 });
+
+// WELCOME BUTTON
+
+
+const welcomeBtn = document.querySelector("#welcome-btn");
+
+welcomeBtn.addEventListener("click", () => {
+    alert("Hello this is group 3 and we are a group of students from feuroosevelt we made this for our project. enjoy browsing thankyou!<3. ");
+});
+
+
+
+// CONTACT FORM VALIDATION
+
+
+const contactForm = document.querySelector("#contact-form");
+const formMessage = document.querySelector("#form-message");
+
+contactForm.addEventListener("submit", (event) => {
+
+    // Prevent page from refreshing
+    event.preventDefault();
+
+    // Get values from the form
+    const name = document.querySelector("#name").value.trim();
+    const email = document.querySelector("#email").value.trim();
+    const message = document.querySelector("#message").value.trim();
+
+    // Check if any field is empty
+    if (name === "" || email === "" || message === "") {
+
+        formMessage.textContent = " Please fill in all fields.";
+        formMessage.style.color = "red";
+
+        return;
+    }
+
+    // Form completed successfully
+    formMessage.textContent =
+        "Message sent successfully! Thank you, " + name + "!";
+
+    formMessage.style.color = "green";
+
+    // Clear all form fields
+    contactForm.reset();
+});
