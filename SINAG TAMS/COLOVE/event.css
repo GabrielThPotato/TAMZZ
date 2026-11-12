@@ -32,6 +32,7 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+    gap: 100px;
 }
 
 .nav-link {
@@ -46,24 +47,61 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-.partners-section{
-    padding:120px 20px 60px;
-    text-align:center;
+/* Main Section Grid Container */
+.partners-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;                 /* Adds clean spacing between columns */
+    width: 90%;                /* Allows it to spread across most of the screen */
+    max-width: 1400px;         /* Caps it on extremely ultra-wide monitors */
+    margin: 50px auto;         /* Centers the entire section horizontally */
 }
 
-.partners-section h2{
-    font-size:clamp(1.8rem,4vw,3rem);
-    font-weight:500;
-    color:#111;
-    margin:40px 0 20px;
+/* Container for the 3 columns */
+.partners-section {
+  padding: 100px 20px 80px; /* Pushes the layout down from the navbar */
+  display: flex;
+  flex-direction: row;       /* Aligns the 3 cards side-by-side */
+  justify-content: center;
+  align-items: center;       /* Centers the blocks vertically on the screen */
+  gap: 40px;                 /* Uniform spacing between your cards */
+  max-width: 1300px;         /* Widens container slightly to let images fit better */
+  margin: 0 auto;
+  min-height: calc(100vh - 250px); 
 }
 
-.partners-section img{
-    width:100%;
-    max-width:500px;
-    height:auto;
-    display:block;
-    margin:0 auto 30px;
+/* Individual Column Card */
+.partners-section .partner-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;    
+  align-items: center;       
+  text-align: center;
+}
+
+/* Clean Header Alignment */
+.partners-section .partner-card h2 {
+  font-family:georgia, serif;
+  font-size: 1.6rem;         /* Slightly increased readable size */
+  font-weight: 500;
+  color: #064018;
+  margin: 0 0 25px 0;        /* Comfortable space above the image */
+  display: block;
+  width: 100%;
+}
+
+/* Image Quality & Sizing Optimization */
+.partners-section .partner-card img {
+  width: 100%;
+  max-width: 360px;          /* Makes images larger while remaining a clean fit */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  
+  /* CRITICAL FOR BLUR: Fixes browser anti-aliasing blur on downscaled graphics */
+  image-rendering: -webkit-optimize-contrast; 
+  image-rendering: crisp-edges;
 }
 
 
@@ -94,26 +132,22 @@ body {
     font-size: 0.9rem;
     letter-spacing: 0.3px;
 }
-/* Mobile */
-@media (max-width:768px){
 
-    .partners-grid{
-        grid-template-columns:1fr;
-        justify-items:center;
-    }
 
-    .partner-card{
-        width:100%;
-        max-width:320px;
-    }
 
-    .partner-logo{
-        width:160px;
-        height:160px;
-    }
 
-    .partner-card h3{
-        font-size:1.6rem;
-    }
+/* ================= MOBILE VIEW (paste at the very bottom of event.css) ================= */
+
+/* Tablet / small laptop: keep nav on one row */
+@media (max-width: 1150px) {
+    .nav-menu { gap: 30px; flex-wrap: wrap; justify-content: center; }
+    .nav-link { padding: 14px 10px; font-size: 12px; }
 }
 
+/* Phone */
+@media (max-width: 800px) {
+    .nav-container { padding: 0 10px; }
+    .nav-menu { gap: 0; flex-wrap: wrap; justify-content: center; }
+    .nav-link { padding: 14px 10px; font-size: 12px; }
+    .partners-section { padding-top: 130px; }
+}
