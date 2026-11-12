@@ -32,7 +32,6 @@ body {
     z-index: 99999;      
     padding-bottom: 5px;    
     font-family: times new roman, serif; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .nav-container {
@@ -45,6 +44,7 @@ body {
 
 .nav-menu {
     display: flex;
+    gap: 100px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -58,7 +58,7 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 13px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
     transition: all 0.2s ease-in-out;
 }
 
@@ -276,19 +276,29 @@ section {
 
 /* Social Nav Anchor Links inside Profiles */
 .social-links {
-    margin-top: auto; /* Aligns matching links across uneven card biographies */
+    margin-top: auto; 
     display: flex;
-    gap: 15px;
+    justify-content: center; /* Centers the whole collection horizontally */
+    align-items: center;     
+    gap: 20px;               /* Space between each social media option */
     border-top: 1px solid #333;
     padding-top: 15px;
 }
 
 .social-links a {
-    color: #f1ca55;
+    display: flex;
+    align-items: center;     /* Perfectly aligns the icon and text vertically */
+    gap: 6px;                /* Space between the icon and its name */
+    color: #ffffff;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.80rem;      /* Font size for the text names */
     font-weight: 600;
     transition: color 0.2s ease;
+}
+
+/* Optional: Make just the icon slightly larger if needed */
+.social-links a i {
+    font-size: 0.65rem;
 }
 
 .social-links a:hover {
@@ -322,3 +332,39 @@ section {
     letter-spacing: 0.3px;
 }
 
+/* Page base + anchor offset (fixes fixed-nav and "Discover the Artist" scroll) */
+html { height: auto; overflow-x: visible; }
+body { overflow-x: clip; }
+.scroll-anchor { position: static; top: auto; height: 0; scroll-margin-top: 80px; }
+
+/* Tablet / small laptop: keep nav on one row */
+@media (max-width: 1150px) {
+    .nav-menu { gap: 30px; flex-wrap: wrap; justify-content: center; }
+    .nav-link { padding: 14px 10px; font-size: 12px; }
+}
+
+/* Phone */
+@media (max-width: 800px) {
+    .nav-container { padding: 0 10px; }
+    .nav-menu { gap: 0; flex-wrap: wrap; justify-content: center; }
+    .nav-link { padding: 14px 10px; font-size: 12px; }
+
+    .scroll-anchor { scroll-margin-top: 110px; }
+
+    .hero { margin-top: 100px; padding: 20px 12px; gap: 10px; }
+    .hero h2 { font-size: 1rem; margin-bottom: 6px; }
+    .hero h1 { font-size: 1.4rem; margin-bottom: 8px; }
+    .hero p { font-size: 1rem; }
+    .logo-wrapper { width: 56px; height: 56px; }
+
+    .featured-artists { padding: 30px 15px; }
+    .featured-artists h1 { font-size: 2rem; margin-bottom: 25px; }
+
+    .discover-text-banner { padding: 25px 15px; }
+    .discover-text-banner .banner-main-title { font-size: 1.6rem; }
+
+    .grid-search { padding: 0 20px; margin-bottom: 25px; }
+
+    /* One artist card per row */
+    .artist-grid { grid-template-columns: 1fr; max-width: 420px; padding: 0 20px; gap: 20px; margin-bottom: 40px; }
+}
